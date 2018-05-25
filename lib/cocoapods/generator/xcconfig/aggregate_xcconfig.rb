@@ -120,7 +120,7 @@ module Pod
           # cause an App Store rejection because frameworks cannot be embedded
           # in embedded targets.
 
-          swift_version = Gem::Version.new(target_swift_version)
+          swift_version = Gem::Version.new(target_swift_version.to_s)
           should_embed = !target.requires_host_target? && pod_targets.any?(&:uses_swift?)
           config = {}
           if should_embed
